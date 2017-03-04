@@ -11,7 +11,7 @@ namespace detail {
 ///////////////////////////////////////////////////////////////////////////////
 inline S strip_namespace(S qualified_name) {
    S test = "be::bstyle::rules::";
-   if (std::equal(test.begin(), test.end(), qualified_name.begin())) {
+   if (std::equal(test.begin(), test.end(), qualified_name.begin(), qualified_name.end())) {
       qualified_name.erase(0, test.length());
    }
 
