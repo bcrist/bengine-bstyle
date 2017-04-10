@@ -6,7 +6,7 @@
 
 #define BE_BSTYLE_VERSION_MAJOR 0
 #define BE_BSTYLE_VERSION_MINOR 1
-#define BE_BSTYLE_VERSION_REV 1
+#define BE_BSTYLE_VERSION_REV 2
 
 /*!! include('common/version', 'BE_BSTYLE', 'BStyle') !! 6 */
 /* ################# !! GENERATED CODE -- DO NOT MODIFY !! ################# */

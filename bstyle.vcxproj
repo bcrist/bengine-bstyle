@@ -72,6 +72,7 @@
     <ClInclude Include="include\token.hpp" />
     <ClInclude Include="include\token_data.hpp" />
     <ClInclude Include="include\token_type.hpp" />
+    <ClInclude Include="include\version.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\cxx_lexer.rl" />

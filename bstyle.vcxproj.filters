@@ -71,6 +71,9 @@
     <ClInclude Include="include\ruleset.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\version.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\cxx_lexer.rl">
