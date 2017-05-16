@@ -26,30 +26,29 @@ BstyleApp::BstyleApp(int argc, char** argv)
 
       
       proc
-         (flag  ({ "i" },{ "interactive" }, "Use interactive resolution.", interactive_))
+         (flag  ({ "i" },{ "interactive" }, interactive_).desc("Use interactive resolution."))
          
-         (param({ "s" },{ "strictness" }, "N", "Set max rule strictness.",
-            [](const S& value) {
+         (param({ "s" },{ "strictness" }, "N", [](const S& value) {
                BE_IGNORE(value);
                // TODO
-            }).extra(Cell() << nl
-               << "Valid values are " << fg_cyan << '0' << reset
-               << " - " << fg_cyan << '9' << reset << nl
-               << "Rules with a higher strictness level than specified will be skipped." << nl))
+            }).desc("Set max rule strictness.")
+              .extra(Cell() << nl
+                  << "Valid values are " << fg_cyan << '0' << reset
+                  << " - " << fg_cyan << '9' << reset << nl
+                  << "Rules with a higher strictness level than specified will be skipped." << nl))
 
-         (param({ "T" },{ "threads" }, "N", "Set number of worker threads to use.",
-            [](const S& value) {
+         (param({ "T" },{ "threads" }, "N", [](const S& value) {
                BE_IGNORE(value);
                // TODO
-            }).extra(Cell() << nl
-               << "If not provided or set to " << fg_cyan << '0' << reset
-               << " or " << fg_cyan << "auto" << reset
-               << " one thread per processor will be used. (" << n_threads_ << ")" << nl))
+            }).desc("Set number of worker threads to use.")
+              .extra(Cell() << nl
+                  << "If not provided or set to " << fg_cyan << '0' << reset
+                  << " or " << fg_cyan << "auto" << reset
+                  << " one thread per processor will be used. (" << n_threads_ << ")" << nl))
           
          (verbosity_param({ "v" },{ "verbosity" }, "LEVEL", default_log().verbosity_mask()))
 
-         (param({ "?" },{ "help" }, "OPTION",
-            [&](const S& value) {
+         (param({ "?" },{ "help" }, "OPTION", [&](const S& value) {
                show_help = true;
                help_query = value;
             }).default_value(S())
@@ -58,8 +57,7 @@ BstyleApp::BstyleApp(int argc, char** argv)
               .extra(Cell() << nl << "If " << fg_cyan << "OPTION" << reset
                             << " is provided, the options list will be filtered to show only options that contain that string." << nl))
 
-         (flag({ },{ "help" },
-            [&]() {
+         (flag({ },{ "help" }, [&]() {
                proc.verbose(true);
             }).ignore_values(true));
 
