@@ -2,6 +2,8 @@
 #include <be/cli/cli.hpp>
 #include <be/core/logging.hpp>
 #include <be/core/io_service_thread_pool.hpp>
+#include <be/util/util_fs_autolink.hpp>
+#include <be/util/util_prng_autolink.hpp>
 #include <iostream>
 #include <thread>
 

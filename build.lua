@@ -15,6 +15,7 @@ tool 'bstyle' {
          'core',
          'core-id-with-names',
          'util',
+         'util-fs',
          'ctable',
          'cli'
       }
