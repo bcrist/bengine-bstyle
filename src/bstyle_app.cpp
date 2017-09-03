@@ -29,7 +29,7 @@ BstyleApp::BstyleApp(int argc, char** argv)
 
       proc
          (flag  ({ "i" },{ "interactive" }, interactive_).desc("Use interactive resolution."))
-         
+
          (param({ "s" },{ "strictness" }, "N", [](const S& value) {
                BE_IGNORE(value);
                // TODO
@@ -47,7 +47,7 @@ BstyleApp::BstyleApp(int argc, char** argv)
                   << "If not provided or set to " << fg_cyan << '0' << reset
                   << " or " << fg_cyan << "auto" << reset
                   << " one thread per processor will be used. (" << n_threads_ << ")" << nl))
-          
+
          (verbosity_param({ "v" },{ "verbosity" }, "LEVEL", default_log().verbosity_mask()))
 
          (param({ "?" },{ "help" }, "OPTION", [&](const S& value) {
@@ -64,7 +64,7 @@ BstyleApp::BstyleApp(int argc, char** argv)
 
       proc.process(argc, argv);
 
-      
+
 
          /*
       po::options_description hidden;
@@ -81,7 +81,7 @@ BstyleApp::BstyleApp(int argc, char** argv)
          inputs_.clear();
          return;
       }
-      
+
       n_threads_ = std::max(1ull, n_threads_);
 
       default_log().verbosity_mask(verbosity);

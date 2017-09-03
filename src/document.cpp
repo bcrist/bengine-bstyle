@@ -177,7 +177,7 @@ void Document::calc_forward_adjacencies() const {
    token_start_of_lines_.resize(n_tokens);
    token_start_of_scopes_.resize(n_tokens);
    token_start_of_statements_.resize(n_tokens);
-   
+
    U32 index = 0;
 
    TokenId comment = TokenId(-1);

@@ -31,7 +31,7 @@ public:
 
    const_iterator begin() const;
    const_iterator end() const;
-   
+
    Token operator[](std::size_t index) const;
 
    const_iterator insert(const_iterator before, TokenSubtype type, gsl::string_span<> text);

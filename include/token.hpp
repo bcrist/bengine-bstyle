@@ -67,7 +67,7 @@ public:
    TokenStatus status() const;
 
 private:
-   Token(const Document& doc, U32 token_id); 
+   Token(const Document& doc, U32 token_id);
 
    U32 id_;
    const Document* doc_;

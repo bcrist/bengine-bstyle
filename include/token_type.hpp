@@ -196,7 +196,7 @@ enum class TokenSubtype {
    op_star_eq,       // *=
    op_slash,         // /
    op_slash_eq,      // /=
-   op_backslash,     // \ 
+   op_backslash,     // \
    op_percent,       // %
    op_percent_eq,    // %=
    op_amp,           // &
@@ -225,7 +225,7 @@ enum class TokenSubtype {
    op_tilde,         // ~
    op_hash,          // #
    op_hash_hash,     // ##
-   
+
    terminator,
 
    invalid_character,
