@@ -24,9 +24,9 @@ BstyleApp::BstyleApp(int argc, char** argv)
       Processor proc;
 
       bool show_help = false;
+      bool verbose = false;
       S help_query;
 
-      
       proc
          (flag  ({ "i" },{ "interactive" }, interactive_).desc("Use interactive resolution."))
          
@@ -59,11 +59,10 @@ BstyleApp::BstyleApp(int argc, char** argv)
               .extra(Cell() << nl << "If " << fg_cyan << "OPTION" << reset
                             << " is provided, the options list will be filtered to show only options that contain that string." << nl))
 
-         (flag({ },{ "help" }, [&]() {
-               proc.verbose(true);
-            }).ignore_values(true));
+         (flag ({ },{ "help" }, verbose).ignore_values(true))
+         ;
 
-      proc(argc, argv);
+      proc.process(argc, argv);
 
       
 
@@ -78,7 +77,7 @@ BstyleApp::BstyleApp(int argc, char** argv)
       */
 
       if (show_help) {
-         proc.describe(std::cout, help_query);
+         proc.describe(std::cout, verbose, help_query);
          inputs_.clear();
          return;
       }

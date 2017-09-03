@@ -8,11 +8,11 @@ namespace be {
 namespace bstyle {
 namespace detail {
 
-Nil init_rule(Rule rule);
+Nil init_rule(std::unique_ptr<Rule> rule);
 
 } // be::bstyle::detail
 
-const std::vector<Rule>& all_rules();
+const std::vector<std::unique_ptr<Rule>>& all_rules();
 
 } // be::bstyle
 } // be
